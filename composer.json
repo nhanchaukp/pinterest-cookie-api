@@ -23,7 +23,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "NhanChauKP\\Pinterest": "src/"
+            "NhanChauKP\\Pinterest\\": "src/"
         }
     }
 }
