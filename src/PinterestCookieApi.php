@@ -192,7 +192,7 @@ class PinterestCookieApi {
         }
 
         if (strpos($response, 'a bot running on your network') > -1) {
-            Helper::response(FALSE, ('Error! Your domain has been blocked by Pinterest. You can use a proxy to avoid the issue.'));
+            return [FALSE, 'Error! Your domain has been blocked by Pinterest. You can use a proxy to avoid the issue.'];
         }
 
         $result = json_decode($response, TRUE);
@@ -203,7 +203,7 @@ class PinterestCookieApi {
         $full_name = isset($result['client_context']['user']['full_name']) ? $result['client_context']['user']['full_name'] : '';
 
         if (empty($id) || empty($username)) {
-            Helper::response(FALSE, $this->errorMessage($result, ('Error! Please check the data and try again!')));
+            return [FALSE, 'Error! Please check the data and try again!'];
         }
 
         return [
