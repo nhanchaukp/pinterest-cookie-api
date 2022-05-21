@@ -10,7 +10,7 @@
     "require": {
         "php": ">=5.6",
         "ext-curl": "*",
-        "guzzlehttp/guzzle": "7.0"
+        "guzzlehttp/guzzle": "*"
     },
     "license": "MIT",
     "authors": [
