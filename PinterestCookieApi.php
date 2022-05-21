@@ -291,7 +291,7 @@ class PinterestCookieApi {
         $username = isset($json_result['client_context']['user']['username']) ? $json_result['client_context']['user']['username'] : '';
 
         if (empty($id) || empty($username)) {
-            $result['error_msg'] = 'The account is disconnected from the FS Poster plugin. Please update your account cookie to connect it to the plugin again. <a href=\'https://www.fs-poster.com/documentation/commonly-encountered-issues#issue8\' target=\'_blank\'>How to?</a>.';
+            $result['error_msg'] = 'The account is disconnected. Please update your account cookie to connect it again.';
         } else {
             $result['error'] = FALSE;
         }
