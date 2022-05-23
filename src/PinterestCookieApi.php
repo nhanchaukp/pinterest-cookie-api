@@ -170,11 +170,11 @@ class PinterestCookieApi {
 
     private function errorMessage($result, $defaultError = '') {
         if (isset($result['resource_response']['message']) && is_string($result['resource_response']['message'])) {
-            return esc_html($result['resource_response']['message']);
+            return htmlentities($result['resource_response']['message']);
         }
 
         if (isset($result['resource_response']['error']['message']) && is_string($result['resource_response']['error']['message'])) {
-            return esc_html($result['resource_response']['error']['message'] . ( isset($result['resource_response']['error']['message_detail']) && is_string($result['resource_response']['error']['message_detail']) ? ' ' . $result['resource_response']['error']['message_detail'] : '' ));
+            return htmlentities($result['resource_response']['error']['message'] . ( isset($result['resource_response']['error']['message_detail']) && is_string($result['resource_response']['error']['message_detail']) ? ' ' . $result['resource_response']['error']['message_detail'] : '' ));
         }
 
         if (!empty($defaultError)) {
